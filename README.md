@@ -112,11 +112,10 @@ scikit-learn
    git clone https://github.com/your-username/airbnb-data-analysis.git
    ```
 
-2. Place the Airbnb data files in the `data/` folder.
+2. Place the Airbnb data files in the `dataset/` folder.
 
-3. Run the Jupyter notebooks in `notebooks/` for EDA and feature engineering.
+3. Run the Jupyter notebooks in `tasks/` for EDA and feature engineering.
 
-4. Visualizations and results will be saved in the `results/` folder.
 
 ---
 
