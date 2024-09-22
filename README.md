@@ -1,10 +1,10 @@
-### README: Airbnb Data Analysis and Feature Engineering Project
+### README: Airbnb Data Analysis and Feature Engineering
 
 ---
 
 # Airbnb Data Analysis and Feature Engineering
 
-This project focuses on **Exploratory Data Analysis (EDA)** and **Feature Engineering** on Airbnb Listings and Reviews datasets from five selected cities. The goal is to derive actionable insights to improve Airbnb's platform, optimize property listings, and enhance guest satisfaction.
+This repository contains a project focused on **Exploratory Data Analysis (EDA)** and **Feature Engineering** using Airbnb Listings and Reviews data from selected cities. The goal is to extract meaningful insights that can help optimize property listings and improve guest satisfaction on the Airbnb platform.
 
 ---
 
@@ -26,88 +26,81 @@ This project focuses on **Exploratory Data Analysis (EDA)** and **Feature Engine
 
 ## Introduction
 
-This project uses data from Airbnb to analyze property listings and reviews for five cities. The objective is to gain insights into pricing, guest satisfaction, and trends across different neighborhoods and room types. In addition, feature engineering on the review text is performed to predict customer satisfaction using text sentiment and keyword extraction.
+This project uses Airbnb data to explore trends and patterns in property listings and guest reviews. The objective is to perform EDA on the **Listings dataset** and engineer features from the **Reviews dataset** to gain insights that can enhance the Airbnb platform, such as identifying pricing trends, guest satisfaction factors, and neighborhood comparisons.
 
 ---
+
 ## Project Structure
- 
+
 ```
 ├── dataset/
-│   ├── listings_city1.csv
-│   ├── README.md
+│   ├── listings_city1.csv      # Listings data for a specific city
+│   ├── README.md               # Describes the data sources and structure
 ├── action/
-│   ├── paris
-│       ├── pre_requisites
-|       ├── tasks
-├── README.md
-└── requirements.txt
+│   ├── paris/                  # Directory for specific city (Paris) actions
+│   │   ├── pre_requisites      # Pre-processing steps for the dataset
+│   │   ├── tasks               # Tasks such as EDA, feature engineering, and results
+├── README.md                   # This README file
+└── requirements.txt            # Required Python packages
 ```
- 
-- `dataset/`: Contains Airbnb Listings and Reviews datasets for the selected cities.
-- `notebooks/`: Contains Jupyter notebooks for EDA and feature engineering tasks.
-- `scripts/`: Contains reusable Python functions for EDA and feature engineering.
-- `results/`: Contains visualizations and data files generated from the analysis.
- 
+
+- **`dataset/`**: Contains the listings data and a `README.md` detailing the dataset structure and source.
+- **`action/`**: Organized by city (e.g., Paris). Each city contains directories for specific steps, such as data preprocessing (`pre_requisites`) and task execution (`tasks`).
+- **`README.md`**: Documentation for the entire project.
+- **`requirements.txt`**: File for installing the required dependencies.
+
 ---
 
 ## Datasets
 
-- **Listings dataset**: Includes detailed information about each Airbnb property, such as price, location, availability, and host details.
-- **Reviews dataset**: Contains guest comments on various properties, reflecting their experiences.
+- **Listings dataset**: Contains property details such as `price`, `minimum_nights`, `availability`, and `review_scores_rating`.
+- **Reviews dataset**: Includes guest comments, which are analyzed to understand customer satisfaction.
 
-The data is available from the [Inside Airbnb website](http://insideairbnb.com/get-the-data.html).
+The data is available for download at [Inside Airbnb](http://insideairbnb.com/get-the-data.html).
 
 ---
 
 ## Tasks
 
-1. **Descriptive Statistics**: Calculate summary statistics for features such as `price`, `minimum_nights`, and `review_scores_rating`.
-2. **Distribution Analysis**: Visualize the distribution of key numerical features.
-3. **Correlation Analysis**: Analyze correlations between variables like `price`, `availability_365`, and `review_scores_rating`.
-4. **Price Analysis**: Analyze the distribution of prices across neighborhoods and room types.
-5. **Neighborhood Comparison**: Compare average `review_scores_rating` across neighborhoods.
-6. **Outlier Detection**: Detect outliers in features such as price and review scores.
-7. **Text Length Analysis**: Create a new feature to measure review text length.
-8. **Keyword Extraction**: Count occurrences of specific keywords in reviews, such as "clean" or "noisy."
+1. **Descriptive Statistics**: Summarize key numerical features such as price, minimum nights, and review scores.
+2. **Distribution Analysis**: Plot histograms to understand the distribution of numerical features.
+3. **Correlation Analysis**: Explore relationships between variables like price and guest ratings.
+4. **Price Analysis**: Examine pricing trends across neighborhoods and room types.
+5. **Neighborhood Comparison**: Compare guest satisfaction across different neighborhoods.
+6. **Outlier Detection**: Detect outliers in features like price and review scores.
+7. **Text Length Feature**: Create a feature based on review text length and analyze its correlation with ratings.
+8. **Keyword Extraction**: Identify specific keywords in reviews (e.g., "clean", "noisy") and create new features.
 
 ---
 
 ## Approach
 
-### 1. **Exploratory Data Analysis (EDA)**:
-   - Summary statistics of the listings.
-   - Histograms and density plots for distributions.
-   - Correlation matrix to find relationships between variables.
-   - Outlier detection and visualization.
+- **EDA**: Focus on summarizing, visualizing, and understanding the distributions and relationships between different numerical features in the Listings dataset.
+- **Feature Engineering**: Extract sentiment, keyword presence, and review text length from the Reviews dataset to predict guest satisfaction.
 
-### 2. **Feature Engineering**:
-   - Sentiment analysis of reviews using `TextBlob` and `VADER`.
-   - Extraction of keywords to create binary features.
-   - Analysis of the impact of these features on guest satisfaction.
-
-### 3. **Visualization**:
-   - Generated visual insights such as histograms for pricing, bar plots for keyword occurrences, and heatmaps for correlation analysis.
+### Tools Used:
+- **Pandas**: For data manipulation.
+- **Seaborn & Matplotlib**: For data visualization.
+- **NLTK & TextBlob**: For sentiment analysis and keyword extraction from reviews.
 
 ---
 
 ## Results
 
-### Key Insights:
+Key findings include:
+- **Price Trends**: Certain neighborhoods are consistently more expensive.
+- **Guest Satisfaction**: Positive keywords (e.g., "clean") and longer reviews are associated with higher guest ratings.
+- **Sentiment Analysis**: Reviews with positive sentiment tend to have higher scores.
 
-- **Price Distribution**: Certain neighborhoods are more expensive, and outliers exist with extremely high prices.
-- **Guest Satisfaction**: Keywords like "clean" and "comfortable" correlate with higher ratings, while "noisy" correlates with lower ratings.
-- **Sentiment Analysis**: Positive sentiment in reviews tends to correlate with higher guest ratings, indicating text sentiment is a good predictor of customer satisfaction.
-  
-Visuals and data files can be found in the `results/` directory.
+Visualizations and detailed insights can be found in the **tasks** folder under each city's directory.
 
 ---
 
 ## Requirements
 
-To run the code, the following Python libraries are required:
+To run the code, install the required dependencies:
 
 ```bash
-# Install required packages
 pip install -r requirements.txt
 ```
 
@@ -128,44 +121,45 @@ scikit-learn
 
 ## Usage
 
-1. Clone this repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/airbnb-data-analysis.git
    ```
 
-2. Place the Airbnb data files in the `dataset/` folder.
+2. **Download the data**:
+   Place the listings and reviews datasets in the `dataset/` folder.
 
-3. Run the Jupyter notebooks in `tasks/` for EDA and feature engineering.
-
+3. **Run the analysis**:
+   Go to the `action/` folder for each city and execute the Jupyter notebooks to perform the analysis.
 
 ---
 
 ## Assumptions
 
-- Sentiment scores and keyword presence correlate strongly with guest satisfaction.
-- Listings and review datasets accurately reflect Airbnb properties and guest experiences.
-- Missing values in numerical features are imputed where necessary.
+- Reviews reflect real guest experiences.
+- Data quality issues (e.g., missing values) are handled with simple imputation or removal of invalid records.
+- Keywords extracted from the reviews directly affect guest satisfaction.
 
 ---
 
 ## Limitations
 
-- The analysis is limited to only five cities, which may not generalize globally.
-- Some reviews may be biased or lack sufficient details to gauge guest satisfaction accurately.
-- The analysis of keywords is case-insensitive and may not capture nuanced meanings.
+- The analysis is limited to five cities, which may not represent trends in other regions.
+- The sentiment analysis and keyword extraction may not capture the full context of reviews.
+- Outliers in pricing and review scores may distort the overall analysis in some cities.
 
 ---
 
 ## Conclusion
 
-This project provided meaningful insights into Airbnb property listings and guest reviews. Through the analysis of pricing, guest satisfaction, and keyword occurrences in reviews, we identified actionable factors that can help improve the Airbnb platform. Sentiment analysis and keyword extraction proved valuable in predicting customer satisfaction.
+This project provides valuable insights into Airbnb listings and guest reviews. Feature engineering on reviews, combined with EDA on listings, helps identify key factors that influence guest satisfaction and pricing trends. These insights can be leveraged by hosts and the Airbnb platform to improve service offerings.
 
 ---
 
-Feel free to reach out with any questions or suggestions. Thank you for exploring this project!
+### License
+
+This project is licensed under the MIT License. Feel free to use, modify, and distribute as needed.
 
 --- 
 
-### License
-
-This project is licensed under the MIT License.
+Feel free to reach out with any questions or suggestions!
