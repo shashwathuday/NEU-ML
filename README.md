@@ -11,6 +11,7 @@ This project focuses on **Exploratory Data Analysis (EDA)** and **Feature Engine
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Project Structure](#project-structure)
 - [Datasets](#datasets)
 - [Tasks](#tasks)
 - [Approach](#approach)
@@ -27,6 +28,26 @@ This project focuses on **Exploratory Data Analysis (EDA)** and **Feature Engine
 
 This project uses data from Airbnb to analyze property listings and reviews for five cities. The objective is to gain insights into pricing, guest satisfaction, and trends across different neighborhoods and room types. In addition, feature engineering on the review text is performed to predict customer satisfaction using text sentiment and keyword extraction.
 
+---
+## Project Structure
+ 
+```
+├── dataset/
+│   ├── listings_city1.csv
+│   ├── README.md
+├── action/
+│   ├── paris
+│       ├── pre_requisites
+|       ├── tasks
+├── README.md
+└── requirements.txt
+```
+ 
+- `dataset/`: Contains Airbnb Listings and Reviews datasets for the selected cities.
+- `notebooks/`: Contains Jupyter notebooks for EDA and feature engineering tasks.
+- `scripts/`: Contains reusable Python functions for EDA and feature engineering.
+- `results/`: Contains visualizations and data files generated from the analysis.
+ 
 ---
 
 ## Datasets
